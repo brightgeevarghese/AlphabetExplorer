@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "edu.miu.worddemo"
+    namespace = "edu.miu.learnword"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "edu.miu.worddemo"
+        applicationId = "edu.miu.learnword"
         minSdk = 29
         targetSdk = 34
         versionCode = 1

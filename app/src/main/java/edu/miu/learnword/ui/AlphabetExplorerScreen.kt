@@ -1,4 +1,4 @@
-package edu.miu.worddemo.ui
+package edu.miu.learnword.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,21 +13,33 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun CounterScreen(
+fun AlphabetExplorerScreen(
     modifier: Modifier = Modifier,
-    counterViewModel: CounterViewModel = viewModel()
+    alphabetViewModel: AlphabetViewModel = viewModel()
 ) {
 
-    val countState by counterViewModel.count.collectAsState()
+    val alphabetUIState by alphabetViewModel.alphabetUIState.collectAsState()
     Column(
         modifier = modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Counter: ${countState.count}")
-        Button(onClick = { counterViewModel.increment() }) {
-            Text(text = "Increment")
+        val alphabet = alphabetUIState.currentAlphabet
+        val word = alphabetUIState.currentWord
+        when {
+            alphabetUIState.isLoading -> {
+                Text(text = "Loading...")
+            }
+            alphabetUIState.isError -> {
+                Text(text = "Error loading alphabets")
+            }
+            alphabetUIState.isCompleted -> {
+                Text(text = "$alphabet for $word")
+            }
+        }
+        Button(onClick = { alphabetViewModel.nextAlphabet() }) {
+            Text(text = "Next Alphabet")
         }
     }
 }

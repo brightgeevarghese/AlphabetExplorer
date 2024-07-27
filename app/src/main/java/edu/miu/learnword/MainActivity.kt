@@ -1,4 +1,4 @@
-package edu.miu.worddemo
+package edu.miu.learnword
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,8 +10,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import edu.miu.worddemo.ui.CounterScreen
-import edu.miu.worddemo.ui.theme.WordDemoTheme
+import edu.miu.learnword.ui.AlphabetExplorerScreen
+import edu.miu.learnword.ui.theme.WordDemoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WordDemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CounterScreen(modifier = Modifier.padding(innerPadding))
+                    AlphabetExplorerScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -36,6 +36,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     WordDemoTheme {
-        CounterScreen()
+        AlphabetExplorerScreen()
     }
 }

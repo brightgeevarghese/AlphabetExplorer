@@ -1,4 +1,4 @@
-package edu.miu.worddemo
+package edu.miu.learnword
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package edu.miu.worddemo
+package edu.miu.learnword
 
 import org.junit.Test
 

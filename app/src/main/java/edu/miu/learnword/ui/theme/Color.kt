@@ -1,4 +1,4 @@
-package edu.miu.worddemo.ui.theme
+package edu.miu.learnword.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
