@@ -38,11 +38,14 @@ class AlphabetViewModel: ViewModel() {
                 isError = false,
                 isCompleted = true
             )
-            Log.d("AlphabetViewModel", "Next Alphabet: ${nextAlphabet.first}")
+
         } else if (currentIndex == alphabets.size - 1) {
             _alphabetUIState.value = _alphabetUIState.value.copy(
                 currentAlphabet = alphabets[0].first,
-                currentWord = alphabets[0].second
+                currentWord = alphabets[0].second,
+                isLoading = false,
+                isError = false,
+                isCompleted = true
             )
         }
     }
